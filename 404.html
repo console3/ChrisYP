@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="抱歉，您访问的页面不存在。NoCaptcha.io专业验证码识别服务平台，提供ReCaptcha、hCaptcha、Cloudflare等15+验证码类型破解，返回首页继续浏览我们的API服务。">
+    <meta name="robots" content="noindex, follow">
+    <title>404 - 页面未找到 | NoCaptcha.io</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-container {
+            max-width: 600px;
+            padding: 2rem;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 40px rgba(255,255,255,0.5);
+            margin: 0;
+            line-height: 1;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            color: #fff;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+        
+        .error-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin: 1.5rem 0 2rem;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .error-btn {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .error-btn-primary {
+            background: #fff;
+            color: #667eea;
+        }
+        
+        .error-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .error-btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .error-btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .error-links {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .error-links h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .quick-link {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .quick-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* 背景装饰 */
+        .error-bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .shape1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -150px;
+        }
+        
+        .shape2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+        
+        .shape3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 10%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-description {
+                font-size: 1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <!-- 背景装饰 -->
+        <div class="error-bg-shape shape1"></div>
+        <div class="error-bg-shape shape2"></div>
+        <div class="error-bg-shape shape3"></div>
+        
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">页面未找到</h2>
+            <p class="error-description">
+                抱歉，您访问的页面不存在或已被移动。<br>
+                请检查网址是否正确，或返回首页继续浏览。
+            </p>
+            
+            <div class="error-actions">
+                <a href="/" class="error-btn error-btn-primary">
+                    <i class="fas fa-home"></i>
+                    返回首页
+                </a>
+                <a href="javascript:history.back()" class="error-btn error-btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    返回上一页
+                </a>
+            </div>
+            
+            <div class="error-links">
+                <h3>快速链接</h3>
+                <div class="quick-links">
+                    <a href="/pages/recaptcha.html" class="quick-link">
+                        <i class="fab fa-google"></i> ReCaptcha
+                    </a>
+                    <a href="/pages/hcaptcha.html" class="quick-link">
+                        <i class="fas fa-robot"></i> hCaptcha
+                    </a>
+                    <a href="/pages/cloudflare.html" class="quick-link">
+                        <i class="fab fa-cloudflare"></i> Cloudflare
+                    </a>
+                    <a href="/pages/status.html" class="quick-link">
+                        <i class="fas fa-signal"></i> 服务状态
+                    </a>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="quick-link" target="_blank">
+                        <i class="fas fa-user-plus"></i> 免费注册
+                    </a>
+                    <a href="/#docs" class="quick-link">
+                        <i class="fas fa-book"></i> 文档中心
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 自动报告404错误到控制台（可选）
+        console.info('404 Error: Page not found - ' + window.location.pathname);
+        
+        // 5秒后自动跳转到首页（可选，取消注释启用）
+        // setTimeout(function() {
+        //     window.location.href = '/';
+        // }, 5000);
+    </script>
+</body>
+</html>

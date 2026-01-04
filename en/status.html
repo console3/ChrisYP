@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NoCaptcha.io real-time service status monitoring page. Check operational status of ReCaptcha, hCaptcha, Cloudflare, Akamai, Kasada and 15+ CAPTCHA solving services. 99.9% uptime guarantee, 24/7 monitoring, ensuring stable API performance">
+    <meta name="keywords" content="service status,NoCaptcha.io,CAPTCHA service monitoring,API status">
+    <meta name="author" content="NoCaptcha.io">
+    
+    <title>Service Status - NoCaptcha.io</title>
+
+        <link rel="canonical" href="https://shrotam.com/pages/status.html">
+        <link rel="alternate" href="https://shrotam.com/pages/status.html" hreflang="zh-CN" />
+    <link rel="alternate" href="https://shrotam.com/en/status.html" hreflang="en" />
+
+        <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shrotam.com/pages/status.html">
+    <meta property="og:title" content="服务状态监控 | 实时系统状态">
+    <meta property="og:description" content="服务状态监控">
+    <meta property="og:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shrotam.com/pages/status.html">
+    <meta name="twitter:title" content="服务状态监控 | 实时系统状态">
+    <meta name="twitter:description" content="服务状态监控">
+    <meta name="twitter:image" content="https://shrotam.com/assets/images/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .status-page {
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .status-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .status-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .status-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .status-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+        }
+        
+        .status-overall {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .overall-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-indicator.online {
+            background: #10b981;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+        }
+        
+        .status-indicator.offline {
+            background: #ef4444;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+        }
+        
+        .status-indicator.partial {
+            background: #f59e0b;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .overall-text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .last-updated {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .service-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .service-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .service-status.online {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .service-status.offline {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .service-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #ef4444;
+            margin: 20px 0;
+        }
+        
+        .refresh-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .refresh-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .stats-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .status-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "服务状态监控 | 实时系统状态",
+        "description": "实时服务状态监控，了解系统运行情况",
+        "provider": {
+            "@type": "Organization",
+            "name": "NoCaptcha.io"
+        },
+        "serviceType": "验证码识别服务",
+        "areaServed": "全球",
+        "url": "https://shrotam.com/pages/status.html"
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://shrotam.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "服务",
+                "item": "https://shrotam.com/pages/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "服务状态监控 | 实时系统状态",
+                "item": "https://shrotam.com/pages/status.html"
+            }
+        ]
+    }
+    </script>
+
+    </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="./index.html" class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>NoCaptcha.io</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="./recaptcha.html" class="dropdown-item">ReCaptcha</a>
+                                <a href="./hcaptcha.html" class="dropdown-item">hCaptcha</a>
+                                <a href="./cloudflare.html" class="dropdown-item">Cloudflare</a>
+                                <a href="./akamai.html" class="dropdown-item">Akamai</a>
+                                <a href="./aws.html" class="dropdown-item">AWS WAF</a>
+                                <a href="./kasada.html" class="dropdown-item">Kasada</a>
+                                <a href="./perimeterx.html" class="dropdown-item">PerimeterX</a>
+                                <a href="./datadome.html" class="dropdown-item">DataDome</a>
+                                <a href="./incapsula.html" class="dropdown-item">Incapsula</a>
+                                <a href="./incapsula_rbzid.html" class="dropdown-item">Incapsula RBZID</a>
+                                <a href="./incapsula_utmvc.html" class="dropdown-item">Incapsula UTMVC</a>
+                                <a href="./tls.html" class="dropdown-item">TLS</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./status.html" class="nav-link active">Status</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./index.html#pricing" class="nav-link">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./index.html#docs" class="nav-link">Docs</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="language-switcher">
+                        <button class="lang-btn" id="lang-btn">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="lang-menu" id="lang-menu">
+                            <a href="../pages/status.html" class="lang-option" data-lang="zh">中文</a>
+                            <a href="../en/status.html" class="lang-option" data-lang="en">English</a>
+                        </div>
+                    </div>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        Free Register
+                    </a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="status-page">
+        <div class="status-container">
+            <div class="status-header">
+                <h1 class="status-title">Service Status</h1>
+                <p class="status-description">Real-time monitoring of all CAPTCHA solving services</p>
+            </div>
+
+            <!-- Overall Status -->
+            <div class="status-overall">
+                <div class="overall-status" id="overall-status">
+                    <div class="loading-spinner"></div>
+                    <span class="overall-text">Loading service status...</span>
+                </div>
+                <div class="last-updated" id="last-updated">
+                    Last updated: --
+                </div>
+                <button class="refresh-button" onclick="loadServiceStatus()">
+                    <i class="fas fa-sync-alt"></i> Refresh Status
+                </button>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" class="error-message" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Unable to load service status, please try again later</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid" id="services-grid">
+                <!-- Services will be loaded here -->
+            </div>
+
+            <!-- Statistics Summary -->
+            <div class="stats-summary" id="stats-summary" style="display: none;">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-services">--</div>
+                    <div class="stat-label">Total Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="online-services">--</div>
+                    <div class="stat-label">Online Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="offline-services">--</div>
+                    <div class="stat-label">Offline Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="uptime-percentage">--%</div>
+                    <div class="stat-label">Service Uptime</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="./index.html" class="logo">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>NoCaptcha.io</span>
+                        </a>
+                        <p class="footer-description">
+                            Professional CAPTCHA solving platform providing efficient and reliable solutions for your business.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="./recaptcha.html">ReCaptcha</a></li>
+                        <li><a href="./hcaptcha.html">hCaptcha</a></li>
+                        <li><a href="./cloudflare.html">Cloudflare</a></li>
+                        <li><a href="./akamai.html">Akamai</a></li>
+                        <li><a href="./aws.html">AWS WAF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html#docs">Documentation</a></li>
+                        <li><a href="./index.html#pricing">Pricing</a></li>
+                        <li><a href="./status.html">Service Status</a></li>
+                        <li><a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">API Access</a></li>
+                        <li><a href="mailto:support@nocaptcha.io">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 NoCaptcha.io. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    
+    <script>
+        // Service name mapping
+        const serviceNameMap = {
+            'cloudflare:universal': { name: 'Cloudflare', description: 'Cloudflare Turnstile CAPTCHA solving service' },
+            'recaptcha:universal': { name: 'ReCaptcha Universal', description: 'Google ReCaptcha v2/v3 universal version' },
+            'recaptcha:enterprise': { name: 'ReCaptcha Enterprise', description: 'Google ReCaptcha enterprise version' },
+            'recaptcha:steam': { name: 'ReCaptcha Steam', description: 'Steam platform specific ReCaptcha' },
+            'hcaptcha:universal': { name: 'hCaptcha Universal', description: 'hCaptcha solving service' },
+            'hcaptcha:v2': { name: 'hCaptcha v2', description: 'hCaptcha v2 version service' },
+            'hcaptcha:steam': { name: 'hCaptcha Steam', description: 'Steam platform specific hCaptcha' },
+            'incapsula:reese84': { name: 'Incapsula Reese84', description: 'Incapsula Reese84 protection bypass' },
+            'incapsula:utmvc': { name: 'Incapsula UTMVC', description: 'Incapsula UTMVC protection bypass' },
+            'incapsula:rbzid': { name: 'Incapsula RBZID', description: 'Incapsula RBZID protection bypass' },
+            'tls:v1': { name: 'TLS Fingerprint', description: 'TLS fingerprint bypass service' },
+            'aws:universal': { name: 'AWS WAF', description: 'AWS WAF protection bypass service' },
+            'akamai:v2': { name: 'Akamai v2', description: 'Akamai Bot Manager v2 bypass' },
+            'akamai:v3': { name: 'Akamai v3', description: 'Akamai Bot Manager v3 bypass' },
+            'datadome:universal': { name: 'DataDome', description: 'DataDome anti-bot protection bypass' },
+            'kasada:cd': { name: 'Kasada CD', description: 'Kasada CD protection bypass' },
+            'kasada:ct': { name: 'Kasada CT', description: 'Kasada CT protection bypass' },
+            'perimeterx:universal': { name: 'PerimeterX', description: 'PerimeterX anti-bot protection bypass' },
+            'shape:v1': { name: 'Shape v1', description: 'Shape Security v1 protection bypass' },
+            'shape:v2': { name: 'Shape v2', description: 'Shape Security v2 protection bypass' },
+            'vercel:universal': { name: 'Vercel', description: 'Vercel protection bypass service' },
+            'giftcard:target': { name: 'Target Gift Card', description: 'Target gift card related service' }
+        };
+
+        async function loadServiceStatus() {
+            const overallStatus = document.getElementById('overall-status');
+            const lastUpdated = document.getElementById('last-updated');
+            const servicesGrid = document.getElementById('services-grid');
+            const errorMessage = document.getElementById('error-message');
+            const statsSection = document.getElementById('stats-summary');
+
+            // Show loading state
+            overallStatus.innerHTML = '<div class="loading-spinner"></div><span class="overall-text">Loading service status...</span>';
+            errorMessage.style.display = 'none';
+            statsSection.style.display = 'none';
+
+            try {
+                const response = await fetch('https://user.nocaptcha.io/plat/get_platform_server_status');
+                const data = await response.json();
+
+                if (data.code === 200 && data.data && data.data.platform_server_status) {
+                    const services = data.data.platform_server_status;
+                    
+                    // Calculate statistics
+                    const totalServices = services.length;
+                    const onlineServices = services.filter(s => s.status === "1").length;
+                    const offlineServices = totalServices - onlineServices;
+                    const uptimePercentage = Math.round((onlineServices / totalServices) * 100);
+
+                    // Update overall status
+                    let overallStatusType = 'online';
+                    let overallStatusText = 'All services operational';
+                    
+                    if (offlineServices > 0) {
+                        if (offlineServices === totalServices) {
+                            overallStatusType = 'offline';
+                            overallStatusText = 'All services offline';
+                        } else {
+                            overallStatusType = 'partial';
+                            overallStatusText = 'Some services offline';
+                        }
+                    }
+
+                    overallStatus.innerHTML = `
+                        <div class="status-indicator ${overallStatusType}"></div>
+                        <span class="overall-text">${overallStatusText}</span>
+                    `;
+
+                    // Update last updated time
+                    lastUpdated.textContent = `Last updated: ${new Date().toLocaleString('en-US')}`;
+
+                    // Render services list
+                    servicesGrid.innerHTML = services.map(service => {
+                        const serviceInfo = serviceNameMap[service.server_name] || {
+                            name: service.server_name,
+                            description: 'CAPTCHA solving service'
+                        };
+                        
+                        const isOnline = service.status === "1";
+                        
+                        return `
+                            <div class="service-card">
+                                <div class="service-header">
+                                    <div class="service-name">${serviceInfo.name}</div>
+                                    <div class="service-status ${isOnline ? 'online' : 'offline'}">
+                                        <div class="status-indicator ${isOnline ? 'online' : 'offline'}"></div>
+                                        ${isOnline ? 'Online' : 'Offline'}
+                                    </div>
+                                </div>
+                                <div class="service-description">${serviceInfo.description}</div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    // Update statistics
+                    document.getElementById('total-services').textContent = totalServices;
+                    document.getElementById('online-services').textContent = onlineServices;
+                    document.getElementById('offline-services').textContent = offlineServices;
+                    document.getElementById('uptime-percentage').textContent = uptimePercentage + '%';
+                    
+                    statsSection.style.display = 'grid';
+
+                } else {
+                    throw new Error('Invalid response format');
+                }
+            } catch (error) {
+                console.error('Failed to load service status:', error);
+                overallStatus.innerHTML = `
+                    <div class="status-indicator offline"></div>
+                    <span class="overall-text">Unable to load service status</span>
+                `;
+                errorMessage.style.display = 'block';
+                servicesGrid.innerHTML = '';
+            }
+        }
+
+        // Load service status on page load
+        document.addEventListener('DOMContentLoaded', loadServiceStatus);
+
+        // Auto refresh every 30 seconds
+        setInterval(loadServiceStatus, 30000);
+    </script>
+</body>
+</html> 

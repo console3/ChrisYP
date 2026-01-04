@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AWS WAF CAPTCHA Solving Service - NoCaptcha.io Professional Solution supporting invisible and standard verification with high success rate">
+    <meta name="keywords" content="AWS WAF,aws-waf-token,AWS CAPTCHA solving,AWS WAF bypass,invisible verification">
+    <meta name="author" content="NoCaptcha.io">
+
+    <link rel="canonical" href="https://shrotam.com/en/aws.html">
+    <link rel="alternate" href="https://shrotam.com/pages/aws.html" hreflang="zh-CN" />
+    <link rel="alternate" href="https://shrotam.com/en/aws.html" hreflang="en" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shrotam.com/en/aws.html">
+    <meta property="og:title" content="AWS WAF CAPTCHA Solving Service - NoCaptcha.io">
+    <meta property="og:description" content="AWS WAF CAPTCHA Solving Service - NoCaptcha.io Professional Solution supporting invisible and standard verification with high success rate">
+    <meta property="og:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shrotam.com/en/aws.html">
+    <meta name="twitter:title" content="AWS WAF CAPTCHA Solving Service - NoCaptcha.io">
+    <meta name="twitter:description" content="AWS WAF CAPTCHA Solving Service - NoCaptcha.io Professional Solution supporting invisible and standard verification with high success rate">
+    <meta name="twitter:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <title>AWS WAF CAPTCHA Solving Service - NoCaptcha.io</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AWS WAF验证码绕过 | 高成功率识别服务",
+        "description": "AWS WAF验证码绕过服务，高效识别，快速响应",
+        "provider": {
+            "@type": "Organization",
+            "name": "NoCaptcha.io"
+        },
+        "serviceType": "验证码识别服务",
+        "areaServed": "全球",
+        "url": "https://shrotam.com/pages/aws.html"
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://shrotam.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "服务",
+                "item": "https://shrotam.com/pages/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AWS WAF验证码绕过 | 高成功率识别服务",
+                "item": "https://shrotam.com/pages/aws.html"
+            }
+        ]
+    }
+    </script>
+
+    </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="./index.html" class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>NoCaptcha.io</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="./recaptcha.html" class="dropdown-item">ReCaptcha</a>
+                                <a href="./hcaptcha.html" class="dropdown-item">hCaptcha</a>
+                                <a href="./cloudflare.html" class="dropdown-item">Cloudflare</a>
+                                <a href="./akamai.html" class="dropdown-item">Akamai</a>
+                                <a href="./aws.html" class="dropdown-item active">AWS WAF</a>
+                                <a href="./kasada.html" class="dropdown-item">Kasada</a>
+                                <a href="./perimeterx.html" class="dropdown-item">PerimeterX</a>
+                                <a href="./datadome.html" class="dropdown-item">DataDome</a>
+                                <a href="./shape.html" class="dropdown-item">Shape</a>
+                                <a href="./incapsula.html" class="dropdown-item">Incapsula</a>
+                                <a href="./vercel.html" class="dropdown-item">Vercel</a>
+                                <a href="./incapsula_rbzid.html" class="dropdown-item">Incapsula RBZID</a>
+                                <a href="./incapsula_utmvc.html" class="dropdown-item">Incapsula UTMVC</a>
+                                <a href="./tls.html" class="dropdown-item">TLS</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./index.html#pricing" class="nav-link">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./index.html#docs" class="nav-link">Docs</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="language-switcher">
+                        <button class="lang-btn" id="lang-btn">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="lang-menu" id="lang-menu">
+                            <a href="../pages/aws.html" class="lang-option" data-lang="zh">中文</a>
+                            <a href="../en/aws.html" class="lang-option" data-lang="en">English</a>
+                        </div>
+                    </div>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        Free Register
+                    </a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="doc-page">
+        <div class="doc-container">
+            <!-- Sidebar -->
+            <aside class="doc-sidebar">
+                <h3 class="doc-nav-title">CAPTCHA Services</h3>
+                <ul class="doc-nav-list">
+                    <li class="doc-nav-item">
+                        <a href="./recaptcha.html" class="doc-nav-link">ReCaptcha</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./hcaptcha.html" class="doc-nav-link">hCaptcha</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./cloudflare.html" class="doc-nav-link">Cloudflare</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./akamai.html" class="doc-nav-link">Akamai</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./aws.html" class="doc-nav-link active">AWS WAF</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./kasada.html" class="doc-nav-link">Kasada</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./perimeterx.html" class="doc-nav-link">PerimeterX</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./datadome.html" class="doc-nav-link">DataDome</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./shape.html" class="doc-nav-link">Shape</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./incapsula.html" class="doc-nav-link">Incapsula</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./vercel.html" class="doc-nav-link">Vercel</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./incapsula_rbzid.html" class="doc-nav-link">Incapsula RBZID</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./incapsula_utmvc.html" class="doc-nav-link">Incapsula UTMVC</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./tls.html" class="doc-nav-link">TLS</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <article class="doc-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <span class="breadcrumb-item">
+                        <a href="./index.html">Home</a>
+                    </span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item">
+                        <a href="#">Docs</a>
+                    </span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item current">AWS WAF</span>
+                </nav>
+
+                <!-- Header -->
+                <header class="doc-header">
+                    <h1 class="doc-title">AWS WAF CAPTCHA Solving Service</h1>
+                    <p class="doc-description">
+                        Professional AWS WAF protection system bypass technology, supporting invisible and standard verification
+                    </p>
+                    <div class="doc-meta">
+                        <span class="doc-tag status-active">Running</span>
+                        <span class="doc-tag">Universal</span>
+                        <span class="doc-tag">Invisible</span>
+                    </div>
+                </header>
+
+                <!-- Body -->
+                <div class="doc-body">
+                    <div class="alert alert-info">
+                        <strong>🚀 Get Free API Key</strong><br>
+                        <a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">Register NoCaptcha.io Now →</a><br>
+                        <em>Professional CAPTCHA Solutions | High Success Rate | Fast Response | 24/7 Support</em>
+                    </div>
+
+                    <h2 id="advantages">🔥 Product Advantages</h2>
+                    
+                    <h3>Why Choose Our AWS WAF Solution</h3>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Professional Bypass</h4>
+                            <p>Specialized technology for AWS WAF protection system bypass</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Efficient Processing</h4>
+                            <p>Fast AWS WAF verification bypass, improving access efficiency</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-crosshairs"></i>
+                            <h4>Precise Recognition</h4>
+                            <p>Intelligent recognition of different types of AWS WAF verification</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <h4>Competitive Pricing</h4>
+                            <p>Invisible verification only costs 150 points, proxy discounts available</p>
+                        </div>
+                    </div>
+
+                    <h2 id="verification-types">🔍 Verification Types</h2>
+
+                    <h3>AWS WAF Token Verification</h3>
+                    <p><strong>Feature</strong>: Returns <code>aws-waf-token</code> for subsequent request verification</p>
+
+                    <div class="pricing-cards">
+                        <div class="pricing-card recommended">
+                            <div class="pricing-header">
+                                <h4>Invisible Verification</h4>
+                                <div class="price">150<span class="unit">pts</span></div>
+                                <div class="badge">Recommended</div>
+                            </div>
+                            <div class="pricing-features">
+                                <div class="feature">✅ Lowest cost</div>
+                                <div class="feature">✅ High success rate</div>
+                                <div class="feature">✅ Fast processing</div>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4>Standard Verification</h4>
+                                <div class="price">500<span class="unit">pts</span></div>
+                            </div>
+                            <div class="pricing-features">
+                                <div class="feature">✅ Full feature support</div>
+                                <div class="feature">✅ Complex scenarios</div>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h4>Proxy Discount</h4>
+                                <div class="price">250/150<span class="unit">pts</span></div>
+                            </div>
+                            <div class="pricing-features">
+                                <div class="feature">✅ Discount with proxy</div>
+                                <div class="feature">✅ Better success rate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <strong>📋 Service Note</strong><br>
+                        Online service is for testing only. For stable/high volume/dedicated/monthly/discount please contact administrator
+                    </div>
+
+                    <h2 id="api">🔗 API Information</h2>
+
+                    <h3>Request URL (POST)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Version Type</th>
+                                    <th>API Endpoint</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Universal</strong></td>
+                                    <td><code>http://api.nocaptcha.io/api/wanda/aws/universal</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Request Headers</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>User-Token</code></td>
+                                    <td>User token, get from dashboard</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Content-Type</code></td>
+                                    <td><code>application/json</code></td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Developer-Id</code></td>
+                                    <td>Developer ID for developer users, string from invite link (e.g., xxx/register?c=abcdef, then abcdef is Developer ID)</td>
+                                    <td>❌</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="params">🔧 POST Parameters (JSON Format)</h2>
+                    
+                    <div class="table-container">
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>href</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Page URL that triggers verification</td>
+                                    <td><span class="param-required">✅</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>proxy</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Proxy address, format: ip:port or usr:pwd@ip:port or socks5://ip:port</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>user_agent</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Custom User-Agent (don't pass if returned unsupported)</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>invisible</code></td>
+                                    <td><span class="param-type">Boolean</span></td>
+                                    <td>Whether it's invisible verification (recommended, only 150 points)</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="examples">📝 Request Examples</h2>
+
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="invisible">Invisible Verification (Recommended)</button>
+                            <button class="code-tab" data-lang="standard">Standard Verification</button>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-block active" data-lang="invisible">
+                                <pre><code class="language-json">{
+    "href": "https://example.com/protected-page",
+    "proxy": "usr:pwd@ip:port",
+    "invisible": true,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+}</code></pre>
+                                <button class="copy-button" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="code-block" data-lang="standard">
+                                <pre><code class="language-json">{
+    "href": "https://example.com/protected-page",
+    "proxy": "usr:pwd@ip:port",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+}</code></pre>
+                                <button class="copy-button" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 id="response">📤 Response Data Format</h2>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>status</code></td>
+                                    <td><code>Integer</code></td>
+                                    <td>Call status: 1=success, 0=failure</td>
+                                </tr>
+                                <tr>
+                                    <td><code>msg</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Call result description</td>
+                                </tr>
+                                <tr>
+                                    <td><code>id</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Unique request ID (for record query)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>data.aws_waf_token</code></td>
+                                    <td><code>String</code></td>
+                                    <td>AWS WAF token returned after verification</td>
+                                </tr>
+                                <tr>
+                                    <td><code>data.cookies</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Related cookies returned after verification</td>
+                                </tr>
+                                <tr>
+                                    <td><code>cost</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Verification time (milliseconds)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Response Example</h3>
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="json">Response Example</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-json">{
+    "cost": "2180.45ms",
+    "data": {
+        "aws_waf_token": "12345678-1234-1234-1234-123456789abc:B8BkdVjHtM0=:example_token_value",
+        "cookies": "aws-waf-token=12345678-1234-1234-1234-123456789abc:B8BkdVjHtM0=:example_token_value; Path=/; Secure; HttpOnly"
+    },
+    "id": "aws-waf-request-12345",
+    "msg": "Verification successful",
+    "status": 1
+}</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h2 id="code-examples">💻 Code Examples</h2>
+
+                    <h3>CURL Command</h3>
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="bash">CURL</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-bash">curl -L 'http://api.nocaptcha.io/api/wanda/aws/universal' \
+ -H 'User-Token: your_user_token_here' \
+ -H 'Developer-Id: hqLmMS' \
+ -H 'Content-Type: application/json' \
+ --data-raw '{"href": "https://example.com/protected-page", "proxy": "usr:pwd@ip:port", "invisible": true}'</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h3>Python Call Example</h3>
+
+                    <p><strong>Install Dependencies</strong></p>
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="bash">Installation</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-bash">pip install -U pynocaptcha -i https://pypi.python.org/simple</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p><strong>Basic Call Example</strong></p>
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="python">Python</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-python">from pynocaptcha import AwsCracker
+
+# AWS WAF CAPTCHA solving
+cracker = AwsCracker(
+    user_token="your_user_token_here",
+    developer_id="hqLmMS",  # Developer ID
+    href="https://example.com/protected-page",
+    proxy="usr:pwd@ip:port",
+    invisible=True,  # Use invisible verification (recommended)
+    debug=True,
+)
+result = cracker.crack()
+print(f"Solving result: {result}")
+
+# Use returned token for subsequent requests
+if result['status'] == 1:
+    aws_waf_token = result['data']['aws_waf_token']
+    print(f"AWS WAF Token: {aws_waf_token}")</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h2 id="important-notes">⚠️ Important Notes</h2>
+
+                    <h3>Usage Considerations</h3>
+                    <div class="notes-grid">
+                        <div class="note-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Maintain Consistency</h4>
+                            <p>Keep IP and User-Agent consistent when using returned token</p>
+                        </div>
+                        <div class="note-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>Timely Usage</h4>
+                            <p>AWS WAF tokens have expiration time, use them promptly</p>
+                        </div>
+                        <div class="note-item">
+                            <i class="fas fa-network-wired"></i>
+                            <h4>Proxy Quality</h4>
+                            <p>Using high-quality proxies can improve success rate</p>
+                        </div>
+                        <div class="note-item">
+                            <i class="fas fa-magic"></i>
+                            <h4>Invisible Priority</h4>
+                            <p>Recommend invisible verification for lower cost and higher success rate</p>
+                        </div>
+                    </div>
+
+                    <h3>Common Issues</h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> Token Expired</h4>
+                            <p>Check if expired and get a new one</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> Verification Failed</h4>
+                            <p>Check proxy quality and network connection</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4><i class="fas fa-question-circle"></i> Parameter Error</h4>
+                            <p>Check if href parameter is a complete URL</p>
+                        </div>
+                    </div>
+
+                    <h2 id="related-services">🎯 Related Services</h2>
+                    
+                    <div class="related-services">
+                        <div class="service-card">
+                            <h4><i class="fas fa-cloud"></i> Cloudflare Verification</h4>
+                            <p>Cloudflare CAPTCHA solving service</p>
+                            <a href="./cloudflare.html">Learn More →</a>
+                        </div>
+                        <div class="service-card">
+                            <h4><i class="fas fa-robot"></i> ReCaptcha Verification</h4>
+                            <p>ReCaptcha CAPTCHA solving service</p>
+                            <a href="./recaptcha.html">Learn More →</a>
+                        </div>
+                        <div class="service-card">
+                            <h4><i class="fas fa-shield"></i> hCaptcha Verification</h4>
+                            <p>hCaptcha CAPTCHA solving service</p>
+                            <a href="./hcaptcha.html">Learn More →</a>
+                        </div>
+                        <div class="service-card">
+                            <h4><i class="fas fa-list"></i> More CAPTCHA Solutions</h4>
+                            <p>View all CAPTCHA services</p>
+                            <a href="./index.html#services">View All →</a>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <strong>Need Technical Support?</strong><br>
+                        <a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">Contact us for professional technical support</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="./index.html" class="logo">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>NoCaptcha.io</span>
+                        </a>
+                        <p class="footer-description">
+                            Professional CAPTCHA solving platform providing efficient and reliable CAPTCHA solutions for your business.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="./recaptcha.html">ReCaptcha</a></li>
+                        <li><a href="./hcaptcha.html">hCaptcha</a></li>
+                        <li><a href="./cloudflare.html">Cloudflare</a></li>
+                        <li><a href="./akamai.html">Akamai</a></li>
+                        <li><a href="./aws.html">AWS WAF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html#docs">Documentation</a></li>
+                        <li><a href="./index.html#pricing">Pricing</a></li>
+                        <li><a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">API Access</a></li>
+                        <li><a href="mailto:support@nocaptcha.io">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 NoCaptcha.io. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/components.js"></script>
+    
+    <!-- Copy Code Function -->
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.parentElement.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    button.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

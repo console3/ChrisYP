@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TLS Client Service - NoCaptcha.io Professional Solution supporting HTTP/2, custom JA3 fingerprints, proxy requests and more">
+    <meta name="keywords" content="TLS Client,HTTP/2,JA3 fingerprint,proxy request,TLS fingerprint spoofing,request client">
+    <meta name="author" content="NoCaptcha.io">
+    
+    <title>TLS Client Service - NoCaptcha.io</title>
+
+        <link rel="canonical" href="https://shrotam.com/pages/tls.html">
+        <link rel="alternate" href="https://shrotam.com/pages/tls.html" hreflang="zh-CN" />
+    <link rel="alternate" href="https://shrotam.com/en/tls.html" hreflang="en" />
+
+        <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shrotam.com/pages/tls.html">
+    <meta property="og:title" content="TLS指纹绕过 | 高级反爬虫技术">
+    <meta property="og:description" content="TLS指纹绕过">
+    <meta property="og:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shrotam.com/pages/tls.html">
+    <meta name="twitter:title" content="TLS指纹绕过 | 高级反爬虫技术">
+    <meta name="twitter:description" content="TLS指纹绕过">
+    <meta name="twitter:image" content="https://shrotam.com/assets/images/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "TLS指纹绕过 | 高级反爬虫技术",
+        "description": "TLS指纹绕过技术，高级反爬虫方案",
+        "provider": {
+            "@type": "Organization",
+            "name": "NoCaptcha.io"
+        },
+        "serviceType": "验证码识别服务",
+        "areaServed": "全球",
+        "url": "https://shrotam.com/pages/tls.html"
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://shrotam.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "服务",
+                "item": "https://shrotam.com/pages/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "TLS指纹绕过 | 高级反爬虫技术",
+                "item": "https://shrotam.com/pages/tls.html"
+            }
+        ]
+    }
+    </script>
+
+    </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>NoCaptcha.io</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="./recaptcha.html" class="dropdown-item">ReCaptcha</a>
+                                <a href="./hcaptcha.html" class="dropdown-item">hCaptcha</a>
+                                <a href="./cloudflare.html" class="dropdown-item">Cloudflare</a>
+                                <a href="./akamai.html" class="dropdown-item">Akamai</a>
+                                <a href="./aws.html" class="dropdown-item">AWS WAF</a>
+                                <a href="./kasada.html" class="dropdown-item">Kasada</a>
+                                <a href="./perimeterx.html" class="dropdown-item">PerimeterX</a>
+                                <a href="./datadome.html" class="dropdown-item">DataDome</a>
+                                <a href="./incapsula.html" class="dropdown-item">Incapsula</a>
+                                <a href="./incapsula_rbzid.html" class="dropdown-item">Incapsula RBZID</a>
+                                <a href="./incapsula_utmvc.html" class="dropdown-item">Incapsula UTMVC</a>
+                                <a href="./tls.html" class="dropdown-item active">TLS</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../index.html#pricing" class="nav-link">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../index.html#docs" class="nav-link">Docs</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="language-switcher">
+                        <button class="lang-btn" id="lang-btn">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="lang-menu" id="lang-menu">
+                            <a href="../../pages/tls.html" class="lang-option" data-lang="zh">中文</a>
+                            <a href="../en/tls.html" class="lang-option" data-lang="en">English</a>
+                        </div>
+                    </div>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        Free Register
+                    </a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="doc-page">
+        <div class="doc-container">
+            <!-- Sidebar -->
+            <aside class="doc-sidebar">
+                <h3 class="doc-nav-title">CAPTCHA Services</h3>
+                <ul class="doc-nav-list">
+                    <li class="doc-nav-item">
+                        <a href="./recaptcha.html" class="doc-nav-link">ReCaptcha</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./hcaptcha.html" class="doc-nav-link">hCaptcha</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./cloudflare.html" class="doc-nav-link">Cloudflare</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./akamai.html" class="doc-nav-link">Akamai</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./aws.html" class="doc-nav-link">AWS WAF</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./kasada.html" class="doc-nav-link">Kasada</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./perimeterx.html" class="doc-nav-link">PerimeterX</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./datadome.html" class="doc-nav-link">DataDome</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./shape.html" class="doc-nav-link">Shape</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./incapsula.html" class="doc-nav-link">Incapsula</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./incapsula_rbzid.html" class="doc-nav-link">Incapsula RBZID</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./incapsula_utmvc.html" class="doc-nav-link">Incapsula UTMVC</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./vercel.html" class="doc-nav-link">Vercel</a>
+                    </li>
+                    <li class="doc-nav-item">
+                        <a href="./tls.html" class="doc-nav-link active">TLS</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Content -->
+            <article class="doc-content">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <span class="breadcrumb-item">
+                        <a href="../index.html">Home</a>
+                    </span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item">
+                        <a href="#">Docs</a>
+                    </span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item current">TLS Client</span>
+                </nav>
+
+                <!-- Header -->
+                <header class="doc-header">
+                    <h1 class="doc-title">TLS Client Service</h1>
+                    <p class="doc-description">
+                        Professional TLS client service supporting HTTP/2, custom JA3 fingerprints, proxy requests and advanced features
+                    </p>
+                    <div class="doc-meta">
+                        <span class="doc-tag status-active">Active</span>
+                        <span class="doc-tag">Universal</span>
+                        <span class="doc-tag">High Flexibility</span>
+                    </div>
+                </header>
+
+                <!-- Body -->
+                <div class="doc-body">
+                    <div class="alert alert-info">
+                        <strong>🚀 Get Free API Key</strong><br>
+                        <a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">Register NoCaptcha.io Now →</a><br>
+                        <em>Professional CAPTCHA Solutions | High Success Rate | Fast Response | 24/7 Support</em>
+                    </div>
+
+                    <h2 id="api">🔗 API Information</h2>
+
+                    <h3>Request URL (POST)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Version</th>
+                                    <th>API Endpoint</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>v1 (Universal)</strong></td>
+                                    <td><code>http://api.nocaptcha.io/api/wanda/tls/v1</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Request Headers</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>User-Token</code></td>
+                                    <td>User token, get from dashboard</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Content-Type</code></td>
+                                    <td><code>application/json</code></td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Developer-Id</code></td>
+                                    <td>Developer ID for developer users, string from invite link (e.g., xxx/register?c=abcdef, then abcdef is Developer ID)</td>
+                                    <td>❌</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="params">🔧 POST Parameters (JSON Format)</h2>
+                    
+                    <div class="table-container">
+                        <table class="param-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>url</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Request URL address</td>
+                                    <td><span class="param-required">✅</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>method</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Request method, get/post</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>headers</code></td>
+                                    <td><span class="param-type">String/Object</span></td>
+                                    <td>Request headers, can be string or object, defaults to { 'User-Agent': 'random ua' } if not provided</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>cookies.value</code></td>
+                                    <td><span class="param-type">String/Object</span></td>
+                                    <td>Cookies for request, can be string or object, { '1': '2', '3': '4' } / '1=2; 3=4'</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>cookies.uri</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Domain for cookie setting, use url</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>proxy</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Proxy address, supports protocols: http/https/socks5, format: ip:port or user:pass@ip:port</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>data</code></td>
+                                    <td><span class="param-type">String/Object</span></td>
+                                    <td>POST request body, can be string or object, { '1': '2', '3': '4' } / '1=2&3=4'</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>json</code></td>
+                                    <td><span class="param-type">String/Object</span></td>
+                                    <td>POST JSON data, example { '1': '2', '3': '4' }</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>timeout</code></td>
+                                    <td><span class="param-type">Number</span></td>
+                                    <td>Request timeout (seconds), default 15 seconds</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>http2</code></td>
+                                    <td><span class="param-type">Boolean</span></td>
+                                    <td>Whether to use HTTP/2 protocol, default false</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>redirect</code></td>
+                                    <td><span class="param-type">Boolean</span></td>
+                                    <td>Whether to follow redirects, default true</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>ja3</code></td>
+                                    <td><span class="param-type">String</span></td>
+                                    <td>Custom JA3 fingerprint, defaults to latest Chrome random fingerprint if not provided</td>
+                                    <td><span class="param-optional">❌</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="examples">📝 Request Examples</h2>
+
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="json">JSON Request Example</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-json">{
+    "url": "https://api-fashion.dior.com/graph?SubscribeNewsletter",
+    "method": "post",
+    "headers": {
+        "Accept-Language": "en-US,en;q=0.9",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+        "DNT": "1",
+        "Origin": "https://www.dior.com",
+        "Pragma": "no-cache",
+        "Referer": "https://www.dior.com/",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-site",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "accept": "*/*",
+        "apollographql-client-name": "Newlook Couture Catalog K8S",
+        "apollographql-client-version": "5.282.3-8601f7a7.hotfix",
+        "content-type": "application/json",
+        "sec-ch-ua": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "x-dior-locale": "en_us",
+        "x-dior-universe": "onedior"
+    },
+    "cookies": {
+        "value": "_abck=D719B7C0C6B1EBE8FC8F5C1B804B2265~-1~YAAQJescuEJsVzWIAQAAnwAZQQkN297mPe+Q48Xd0/10jSvgz/y69qQbPEwxUuQZhIhisL+GFAMfvabHtQPRUbiIqzDD6vA9iN9lvjzaAbKaL+aNXF/3EhpYYYUsBa0q92JUxusD8F09nFXy3mfZ8p8GzDk+/ikw4Y8QVQcchjC/s6XYbG+I2RSHl+lDOSvR2biGLFZ1dW2PsFZQ6Fs4M1/ccWfaXg6IRvzjlWaF0vH8GIoljDVRvZxwCeUO71QJORFxeVEEO43BiC3LczJhMomt8pnTbnJcMbMbi1zFcYUKUZjYvB7+kJ1JsMHfVdzbrwTB2I3bePGPgX06RvzCReVCETYpJB7H+XEeJgQQDzKiYZhCONfnae3BQUll~-1~-1~1684722838; bm_sz=751A827227D797408E66A3559D978757~YAAQpVcyuNsPVjCIAQAAMTCrRhNw86NLVNcBypYZvOkbMMnc+ef6EeDWu9UtvPw3OfyfpKLmEFQeDw99mddahdMlOj3VxzPz8eV9mfMSWDLxup33fIKAvsMvnUjvAJV0gpZvTTwdk0atKXCg1DXvs+U+VOvPPJtS76B2t+r0jXrB+cUm2hJL7qF59kbHLBl54yypauoWa1qEu9lgelS5kdwiR93A0c9IRagfLG4VjFydhZBoD6ldWEQjQUflrf00GSoxQpL0QBKRlD7fFNRtMhBmndvu5yoGdixtPXCEKk5BzRl/~4605506~4276528; ak_bmsc=0E5236AFD795DD698B2E15191CEF0FDC~000000000000000000000000000000~YAAQpVcyuNoPVjCIAQAAMTCrRhNkrxzrgkZ1QP7XH0+hyJ2ul+4V0reJDlf1omJylP4/7vc+bxfB8EW1pfuYQWdBmzTBnE84h+7tH1SbFvNNNDul53BJsoOd79t8V0LGQdlXls3FWxITVSwuVlvCQTuJY1jq+uxrTTFFWpuqWQZnWkaLC/p8E7KRycXTaDSh7UW4k6ISRmssUftgDxwjZg43T6IbMyPf9dugLQSg9dKx4p8wyTcNern/fHfx7dAABbnUJkwmP+Y/eR4mfc9MJtIsJ3006DKH7PNoZ5JhtmnN9JTuhwfSEEnCrhs0j/cb2TrsSMo26w4C1xIaUNwZXE77YDci8VIkwEq9NvSTrTZUncSl0rsvoBz0j4QheSI=",
+        "uri": "https://www.dior.com/"
+    },
+    "json": {
+        "operationName": "SubscribeNewsletter",
+        "variables": {
+            "input": {
+                "newsletters": {
+                    "couture": true,
+                    "beauty": false
+                },
+                "profiling": {},
+                "user": {
+                    "title": "Mr",
+                    "email": "example@gmail.com",
+                    "firstName": "John",
+                    "lastName": "Doe"
+                }
+            }
+        },
+        "query": "mutation SubscribeNewsletter($input: NewslettersOptinLegacyInput!) {\n  subscribeNewsletter(input: $input) {\n    success\n    errorMessages\n    errorDetail\n    __typename\n  }\n}\n"
+    },
+    "proxy": "socks5h://123:456@127.0.0.1:1234",
+    "http2": true,
+    "redirect": false,
+    "ja3": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,5-43-18-10-13-51-23-16-17513-27-65281-35-45-0-11-21,29-23-24,0"
+}</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h2 id="response">📤 Response Data Format</h2>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>status</code></td>
+                                    <td><code>Integer</code></td>
+                                    <td>Call success status, 1=success, 0=failure, use this value for judgment</td>
+                                </tr>
+                                <tr>
+                                    <td><code>msg</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Call result description</td>
+                                </tr>
+                                <tr>
+                                    <td><code>id</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Request ID (unique, for record query)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>data.status</code></td>
+                                    <td><code>Number</code></td>
+                                    <td>Response status code</td>
+                                </tr>
+                                <tr>
+                                    <td><code>data.text</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Response body</td>
+                                </tr>
+                                <tr>
+                                    <td><code>data.cookies</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Response cookies</td>
+                                </tr>
+                                <tr>
+                                    <td><code>data.location</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Redirect address</td>
+                                </tr>
+                                <tr>
+                                    <td><code>cost</code></td>
+                                    <td><code>String</code></td>
+                                    <td>Verification time (milliseconds)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Response Example</h3>
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="json">Response Example</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-json">{
+    "status": 1,
+    "msg": "Verification successful",
+    "id": "049bfae2-4e84-4f29-99aa-a33688991355",
+    "cost": "1414.15ms",
+    "data": {
+        "response": {
+            "status": 200,
+            "text": "{\"data\":{\"subscribeNewsletter\":{\"success\":true,\"errorMessages\":null,\"errorDetail\":null,\"__typename\":\"NewsletterOptinResponse\"}}}\n",
+            "tls": {
+                "ja3": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,51-23-43-45-27-17513-5-11-18-10-13-0-35-65281-16-21-41,29-23-24,0",
+                "ja3_hash": "2795d91de2c9d7e36984350e338ddc9a",
+                "akamai": "1:65536,2:0,3:1000,4:6291456,6:262144|15663105|0|m,a,s,p",
+                "akamai_hash": "46cedabdca2073198a42fa10ca4494d0"
+            },
+            "cookies": "dtCookie=v_4_srv_5_sn_2A2A9F901F6BE925EF475041C744108A_perc_100000_ol_0_mul_1_app-3Aea7c4b59f27d43eb_1; _abck=6D43584C164A308CFC85AE1462D56CD1~0~YAAQpqg7FxN5F5+IAQAAXFwfvgpoxc0IH5DxeBHUCgDMC4vh8eHRZkqMr5rUFAxg+Zjwi0ouU4PF9WIT9rdcJtenDDu9T438N+xtPqd0JdzKePw3Y7u7OJkZe95KAzQ/L9VqCPLEvHC9Nap2ELrgIY32GRzJKj2qgPmuX4avgoopJmJ7hLhfq9rGwqkfBWaykDHs1MHb8xSjmr/bGbDHbpzSlThrEU8PlKxL/QWOIgPDyD/hZWi5wVyLG5zim5hVeykHZEiXgucS9u/gTHUGMmlz+EZU+Gj1rZ5/vMRqe9mieGJj+93IZElOAdT5SeXmmr++XZx8PEJaE8UTj+gCADhi74Up9AR7HxFcL5yI2uixdkQt28OYUzA4JwGmk2YpBDH4ZIVTnsxQ2TmlmtC4U3Avhw==~-1~-1~-1"
+        }
+    }
+}</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h2 id="code-examples">💻 Code Examples</h2>
+
+                    <h3>Python Call Example</h3>
+
+                    <p><strong>Install Dependencies</strong></p>
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="bash">Installation</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-bash">pip install -U pynocaptcha -i https://pypi.python.org/simple</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p><strong>Code Example</strong></p>
+                    <div class="code-example">
+                        <div class="code-tabs">
+                            <button class="code-tab active" data-lang="python">Python</button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code class="language-python">from pynocaptcha import TlsV1Cracker
+
+# TLS Client request
+cracker = TlsV1Cracker(
+    user_token="xxx",
+    url="https://www.baidu.com/",
+)
+ret = cracker.crack()
+print(ret)</code></pre>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h2 id="related-services">🎯 Related Services</h2>
+                    
+                    <div class="related-services">
+                        <div class="service-card">
+                            <h4><i class="fas fa-shield"></i> AWS WAF Verification</h4>
+                            <p>AWS WAF CAPTCHA solving service</p>
+                            <a href="./aws.html">Learn More →</a>
+                        </div>
+                        <div class="service-card">
+                            <h4><i class="fas fa-lock"></i> Akamai Verification</h4>
+                            <p>Akamai CAPTCHA solving service</p>
+                            <a href="./akamai.html">Learn More →</a>
+                        </div>
+                        <div class="service-card">
+                            <h4><i class="fas fa-cog"></i> Cloudflare Verification</h4>
+                            <p>Cloudflare CAPTCHA solving service</p>
+                            <a href="./cloudflare.html">Learn More →</a>
+                        </div>
+                        <div class="service-card">
+                            <h4><i class="fas fa-list"></i> More CAPTCHA Solutions</h4>
+                            <p>View all CAPTCHA services</p>
+                            <a href="../index.html#services">View All →</a>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <strong>Need Technical Support?</strong><br>
+                        <a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">Contact us for professional technical support</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="logo">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>NoCaptcha.io</span>
+                        </a>
+                        <p class="footer-description">
+                            Professional CAPTCHA solving platform providing efficient and reliable CAPTCHA solutions for your business.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="./recaptcha.html">ReCaptcha</a></li>
+                        <li><a href="./hcaptcha.html">hCaptcha</a></li>
+                        <li><a href="./cloudflare.html">Cloudflare</a></li>
+                        <li><a href="./akamai.html">Akamai</a></li>
+                        <li><a href="./aws.html">AWS WAF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#docs">Documentation</a></li>
+                        <li><a href="../index.html#pricing">Pricing</a></li>
+                        <li><a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">API Access</a></li>
+                        <li><a href="mailto:support@nocaptcha.io">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 NoCaptcha.io. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    
+    <!-- Copy Code Function -->
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.parentElement.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    button.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

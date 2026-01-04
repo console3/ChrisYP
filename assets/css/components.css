@@ -1,0 +1,695 @@
+/**
+ * NoCaptcha.io 组件样式文件
+ * 特殊组件和页面特定样式
+ */
+
+/* ===== 文档页面样式 ===== */
+.doc-page {
+  padding: var(--spacing-3xl) 0;
+  background: var(--bg-primary);
+  max-width: 100vw !important; /* 限制最大宽度为视窗宽度 */
+  width: 100%;
+  overflow-x: hidden; /* 防止水平滚动 */
+  word-wrap: break-word; /* 强制换行 */
+}
+
+.doc-container {
+  display: grid;
+  gap: var(--spacing-2xl);
+  grid-template-columns: 280px 1fr; /* 固定侧边栏宽度，内容区域自适应 */
+  max-width: 1200px !important; /* 强制限制文档页面最大宽度为1200px */
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 var(--spacing-md); /* 减少左右内边距 */
+  box-sizing: border-box; /* 确保padding计算在总宽度内 */
+}
+
+/* 覆盖可能的container类影响 */
+.doc-page .container.doc-container,
+.doc-page .doc-container {
+  max-width: 1200px !important;
+  width: 100% !important;
+}
+
+/* 确保footer等其他container也遵循页面宽度限制 */
+.footer .container {
+  max-width: 1200px !important;
+}
+
+/* 针对所有doc页面中的container类进行统一限制 */
+.doc-page ~ .footer .container,
+.doc-page + .footer .container {
+  max-width: 1200px !important;
+}
+
+@media (max-width: 1240px) {
+  .doc-container {
+    max-width: calc(100vw - 2rem) !important; /* 在小屏幕上留出适当边距 */
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 1024px) {
+  .doc-container {
+    grid-template-columns: 1fr;
+    max-width: calc(100vw - 2rem) !important;
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .doc-container {
+    padding: 0 var(--spacing-sm);
+    max-width: calc(100vw - 1rem) !important;
+  }
+}
+
+/* 侧边栏导航 */
+.doc-sidebar {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md); /* 减少内边距 */
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+  width: 100%; /* 确保宽度填满容器 */
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .doc-sidebar {
+    position: static;
+    order: 2;
+    margin-top: var(--spacing-lg);
+  }
+}
+
+.doc-nav-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  padding: 0; /* 移除多余的内边距 */
+}
+
+.doc-nav-list {
+  list-style: none;
+  padding: 0; /* 移除默认的list padding */
+  margin: 0; /* 移除默认的list margin */
+}
+
+.doc-nav-item {
+  margin-bottom: var(--spacing-xs);
+}
+
+.doc-nav-link {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md); /* 调整内边距 */
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-sm);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.doc-nav-link:hover,
+.doc-nav-link.active {
+  background: var(--gray-50);
+  color: var(--primary-color);
+}
+
+/* 文档内容区域 */
+.doc-content {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  min-width: 0; /* 允许内容收缩 */
+  max-width: 100%; /* 确保不超过父容器 */
+  box-sizing: border-box;
+  overflow-x: hidden; /* 防止内容溢出 */
+  word-wrap: break-word; /* 强制长单词换行 */
+  overflow-wrap: break-word; /* 兼容性 */
+}
+
+.doc-header {
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  overflow-wrap: break-word; /* 标题也要能换行 */
+}
+
+.doc-title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  word-wrap: break-word; /* 标题换行 */
+}
+
+.doc-description {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  word-wrap: break-word; /* 描述换行 */
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.doc-tag {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--gray-100);
+  color: var(--text-secondary);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.doc-tag.status-active {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--secondary-color);
+}
+
+.doc-tag.status-premium {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent-color);
+}
+
+/* 文档正文样式 */
+.doc-body {
+  line-height: 1.8;
+  word-wrap: break-word; /* 强制换行 */
+  overflow-wrap: break-word; /* 兼容性 */
+  max-width: 100%; /* 确保不超过容器 */
+}
+
+.doc-body h1,
+.doc-body h2,
+.doc-body h3,
+.doc-body h4,
+.doc-body h5,
+.doc-body h6 {
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  word-wrap: break-word; /* 标题换行 */
+}
+
+.doc-body h1 {
+  font-size: var(--font-size-2xl);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--spacing-sm);
+}
+
+.doc-body h2 {
+  font-size: var(--font-size-xl);
+}
+
+.doc-body h3 {
+  font-size: var(--font-size-lg);
+}
+
+.doc-body p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-secondary);
+  word-wrap: break-word; /* 段落换行 */
+  overflow-wrap: break-word; /* 兼容性 */
+}
+
+.doc-body ul,
+.doc-body ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+  word-wrap: break-word; /* 列表换行 */
+}
+
+.doc-body li {
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-secondary);
+  word-wrap: break-word; /* 列表项换行 */
+}
+
+.doc-body a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.doc-body a:hover {
+  border-bottom-color: var(--primary-color);
+}
+
+/* 代码块样式 */
+.doc-body pre {
+  background: var(--gray-900);
+  color: var(--gray-100);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  overflow-x: auto; /* 代码块内部可滚动 */
+  margin: var(--spacing-lg) 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  max-width: 100%; /* 确保不超过容器 */
+  box-sizing: border-box;
+  word-wrap: break-word; /* 长行换行 */
+  white-space: pre-wrap; /* 保持格式的同时允许换行 */
+}
+
+.doc-body code {
+  background: var(--gray-100);
+  color: var(--gray-700);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  word-wrap: break-word; /* 内联代码换行 */
+  overflow-wrap: break-word; /* 兼容性 */
+  word-break: break-all; /* 强制在任何字符处换行 */
+}
+
+.doc-body pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  word-wrap: break-word; /* 预格式化代码也要能换行 */
+  word-break: break-all; /* 强制在任何字符处换行 */
+  white-space: pre-wrap; /* 保持格式的同时允许换行 */
+}
+
+/* 图片样式 */
+.doc-body img,
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  margin: var(--spacing-md) 0;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+.doc-body img {
+  display: block;
+  margin: var(--spacing-lg) auto;
+}
+
+.doc-body img:hover {
+  transform: scale(1.02);
+}
+
+.image-container {
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: var(--border-radius-lg);
+}
+
+/* 特殊图片样式（参数获取截图） */
+.doc-body img[src*="arg"],
+.doc-body img[src*="img"] {
+  border: 2px solid var(--border-color);
+  padding: var(--spacing-sm);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .doc-body img,
+  .responsive-image {
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .doc-body img[src*="arg"],
+  .doc-body img[src*="img"] {
+    padding: var(--spacing-xs);
+  }
+}
+
+/* 表格容器 - 处理水平滚动 */
+.table-container {
+  overflow-x: auto;
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  max-width: 100%; /* 确保容器不超过父元素 */
+  width: 100%;
+}
+
+.doc-body table {
+  width: 100%;
+  min-width: 600px; /* 设置最小宽度确保表格内容可读 */
+  max-width: 100%; /* 限制最大宽度 */
+  border-collapse: collapse;
+  margin: 0; /* 由容器处理margin */
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: none; /* 由容器处理阴影 */
+  table-layout: fixed; /* 固定表格布局，防止内容撑开 */
+}
+
+.doc-body th,
+.doc-body td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+  word-wrap: break-word; /* 单元格内容换行 */
+  overflow-wrap: break-word; /* 兼容性 */
+  max-width: 0; /* 与table-layout: fixed配合使用 */
+}
+
+.doc-body th {
+  background: var(--gray-50);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+}
+
+.doc-body td {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.doc-body tr:last-child td {
+  border-bottom: none;
+}
+
+/* 参数表格特殊样式 */
+.param-table {
+  margin: var(--spacing-lg) 0;
+}
+
+.param-table th:first-child {
+  width: 20%;
+  min-width: 120px;
+}
+
+.param-table th:nth-child(2) {
+  width: 15%;
+}
+
+.param-table th:nth-child(3) {
+  width: 15%;
+}
+
+.param-table th:last-child {
+  width: 50%;
+}
+
+.param-required {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.param-optional {
+  color: #059669;
+  font-weight: 600;
+}
+
+.param-type {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+/* 引用块样式 */
+.doc-body blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  background: var(--gray-50);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.doc-body blockquote p {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* 警告框样式 */
+.alert {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-lg) 0;
+  border-left: 4px solid;
+}
+
+.alert-info {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.alert-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.alert-danger {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+/* 代码示例 */
+.code-example {
+  margin: var(--spacing-lg) 0;
+  max-width: 100%; /* 确保不超过容器 */
+  overflow: hidden; /* 防止内容溢出 */
+}
+
+.code-example-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.code-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0;
+  overflow-x: auto; /* 标签可滚动 */
+  max-width: 100%; /* 确保不超过容器 */
+}
+
+.code-tab {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap; /* 防止标签文字换行 */
+}
+
+.code-tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.code-tab:hover {
+  color: var(--primary-color);
+}
+
+.code-content {
+  position: relative;
+  max-width: 100%; /* 确保不超过容器 */
+  overflow: hidden; /* 防止溢出 */
+}
+
+.copy-button {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--gray-700);
+  color: var(--gray-300);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copy-button:hover {
+  background: var(--gray-600);
+  color: var(--text-white);
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-item a:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumb-separator {
+  margin: 0 var(--spacing-sm);
+  color: var(--text-muted);
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .doc-container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .doc-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .doc-sidebar {
+    padding: var(--spacing-sm);
+  }
+  
+  .doc-nav-link {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-xs);
+  }
+  
+  .doc-body table {
+    font-size: var(--font-size-sm);
+  }
+  
+  .doc-body th,
+  .doc-body td {
+    padding: var(--spacing-sm);
+  }
+  
+  .code-tabs {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .doc-container {
+    padding: 0 var(--spacing-xs);
+    gap: var(--spacing-lg);
+  }
+  
+  .doc-content {
+    padding: var(--spacing-md);
+  }
+  
+  .doc-sidebar {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Related Services */
+.related-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  display: block;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.service-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 全局宽度安全保护 */
+.doc-page,
+.doc-page * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 特殊处理超长字符串 */
+.doc-body .language-json,
+.doc-body .language-bash,
+.doc-body .language-python {
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: break-word !important;
+}
+
+/* 确保所有可能包含长文本的元素都能正确换行 */
+.doc-body td,
+.doc-body th,
+.doc-body p,
+.doc-body li,
+.doc-body div,
+.doc-body span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+} 

@@ -1,0 +1,6 @@
+.DS_Store
+
+# IDE / Assistant local configs
+.idea/
+.claude/
+

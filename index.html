@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NoCaptcha.io专业验证码识别服务，支持Python验证码识别API接口，提供ReCaptcha破解、hCaptcha解决方案、Cloudflare绕过等15+验证码类型，99.9%成功率，1-10秒快速响应，24/7技术支持">
+    <meta name="keywords" content="验证码识别,Python验证码识别,验证码识别API接口,ReCaptcha破解,hCaptcha解决方案,Cloudflare绕过,反爬虫解决方案">
+    <meta name="author" content="NoCaptcha.io">
+    <link rel="canonical" href="https://shrotam.com/">
+    <link rel="alternate" href="https://shrotam.com/" hreflang="zh-CN" />
+    <link rel="alternate" href="https://shrotam.com/en/" hreflang="en" />
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shrotam.com/">
+    <meta property="og:title" content="专业验证码识别平台 | Python验证码识别API | NoCaptcha.io">
+    <meta property="og:description" content="NoCaptcha.io专业验证码识别服务，支持Python验证码识别API接口，提供ReCaptcha破解、hCaptcha解决方案等15+验证码类型，99.9%成功率">
+    <meta property="og:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shrotam.com/">
+    <meta property="twitter:title" content="专业验证码识别平台 | Python验证码识别API | NoCaptcha.io">
+    <meta property="twitter:description" content="NoCaptcha.io专业验证码识别服务，支持Python验证码识别API接口，提供ReCaptcha破解、hCaptcha解决方案等15+验证码类型，99.9%成功率">
+    <meta property="twitter:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <title>专业验证码识别平台 | Python验证码识别API | NoCaptcha.io</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://shrotam.com">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    
+    <!-- Fonts with display swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NoCaptcha.io",
+        "url": "https://shrotam.com/",
+        "logo": "https://shrotam.com/assets/images/logo.png",
+        "description": "专业的验证码解决方案服务平台，提供ReCaptcha、hCaptcha、Cloudflare等主流验证码的API接口服务",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["zh-CN", "en"]
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "NoCaptcha.io",
+        "url": "https://shrotam.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "验证码解决方案API服务",
+        "provider": {
+            "@type": "Organization",
+            "name": "NoCaptcha.io"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "全球"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "验证码服务列表",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "ReCaptcha验证码服务",
+                        "description": "支持 v2/v3 通用版、企业版、Steam版"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "hCaptcha验证码服务",
+                        "description": "hCaptcha 通用版，直接返回 generated_pass_UUID"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cloudflare验证码服务",
+                        "description": "CloudFlare 盾通用版，返回 cookies 或验证码提交参数"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="主导航">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="/" class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>NoCaptcha.io</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active">首页</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#services" class="nav-link">服务 <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="./pages/recaptcha.html" class="dropdown-item">ReCaptcha</a>
+                                <a href="./pages/hcaptcha.html" class="dropdown-item">hCaptcha</a>
+                                <a href="./pages/cloudflare.html" class="dropdown-item">Cloudflare</a>
+                                <a href="./pages/akamai.html" class="dropdown-item">Akamai</a>
+                                <a href="./pages/aws.html" class="dropdown-item">AWS WAF</a>
+                                <a href="./pages/kasada.html" class="dropdown-item">Kasada</a>
+                                <a href="./pages/perimeterx.html" class="dropdown-item">PerimeterX</a>
+                                <a href="./pages/datadome.html" class="dropdown-item">DataDome</a>
+                                <a href="./pages/incapsula.html" class="dropdown-item">Incapsula</a>
+                                <a href="./pages/incapsula_rbzid.html" class="dropdown-item">Incapsula RBZID</a>
+                                <a href="./pages/incapsula_utmvc.html" class="dropdown-item">Incapsula UTMVC</a>
+                                <a href="./pages/tls.html" class="dropdown-item">TLS</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./pages/status.html" class="nav-link">服务状态</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#pricing" class="nav-link">定价</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="language-switcher">
+                        <button class="lang-btn" id="lang-btn">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">中文</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="lang-menu" id="lang-menu">
+                            <a href="./" class="lang-option" data-lang="zh">中文</a>
+                            <a href="./en/index.html" class="lang-option" data-lang="en">English</a>
+                        </div>
+                    </div>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        免费注册
+                    </a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="面包屑导航">
+        <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="https://www.nocaptcha.io/" itemprop="item">
+                    <span itemprop="name">首页</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero bg-gradient-hero" role="main">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">专业验证码识别服务平台</span>
+                        <br>Python API接口解决方案
+                    </h1>
+                    <p class="hero-description">
+                        支持Python验证码识别的完整解决方案，提供15+验证码类型破解<br>
+                        包括<a href="./pages/recaptcha.html" title="ReCaptcha破解API">ReCaptcha破解</a>、<a href="./pages/kasada.html" title="Kasada Solver API">Kasada绕过</a>等专业服务<br>
+                        99.9%成功率 • 1-10秒响应 • 24/7技术支持
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-cta btn-large" target="_blank">
+                            <i class="fas fa-rocket"></i>
+                            立即注册获取API
+                        </a>
+                        <a href="#services" class="btn btn-outline btn-large">
+                            <i class="fas fa-play"></i>
+                            查看服务
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">服务可用性</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1-10s</div>
+                            <div class="stat-label">平均响应时间</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">支持验证码类型</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <div class="floating-card">
+                            <div class="card-header">
+                                <div class="card-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="card-title">API Response</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="code-line">
+                                    <span class="code-key">"status":</span>
+                                    <span class="code-value">"success"</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-key">"token":</span>
+                                    <span class="code-value">"03AGdBq26..."</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-key">"time":</span>
+                                    <span class="code-value">"2.3s"</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features bg-gradient-light" aria-labelledby="features-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="features-title" class="section-title">核心优势</h2>
+                <p class="section-description">为什么选择 NoCaptcha.io？</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">全面兼容</h3>
+                    <p class="feature-description">支持所有主流验证码类型，一站式解决方案</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">极速响应</h3>
+                    <p class="feature-description">同步返回结果，平均响应时间1-10秒</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h3 class="feature-title">高成功率</h3>
+                    <p class="feature-description">专业算法优化，确保高通过率</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">稳定可靠</h3>
+                    <p class="feature-description">7x24小时服务，及时更新维护</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">价格优惠</h3>
+                    <p class="feature-description">传入代理享受折扣，VIP等级更多优惠</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">技术支持</h3>
+                    <p class="feature-description">24/7专业技术支持，快速响应</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services bg-gradient-hero" aria-labelledby="services-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="services-title" class="section-title">支持的验证码类型</h2>
+                <p class="section-description">全面覆盖市面上所有主流验证码</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">ReCaptcha</h3>
+                            <div class="service-status">
+                                <span class="status-badge active">运行中</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="service-description">支持 v2/v3 通用版、企业版、Steam版</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">消耗点数:</span>
+                            <span class="detail-value">300-600</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">代理优惠:</span>
+                            <span class="detail-value">150-300</span>
+                        </div>
+                    </div>
+                    <a href="./pages/recaptcha.html" class="btn btn-outline btn-small" title="查看ReCaptcha验证码服务详情">查看ReCaptcha详情</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">hCaptcha</h3>
+                            <div class="service-status">
+                                <span class="status-badge active">运行中</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="service-description">hCaptcha 通用版，直接返回 generated_pass_UUID</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">消耗点数:</span>
+                            <span class="detail-value">300</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">代理优惠:</span>
+                            <span class="detail-value">150</span>
+                        </div>
+                    </div>
+                    <a href="./pages/hcaptcha.html" class="btn btn-outline btn-small" title="查看hCaptcha验证码服务详情">查看hCaptcha详情</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fab fa-cloudflare"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">Cloudflare</h3>
+                            <div class="service-status">
+                                <span class="status-badge active">运行中</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="service-description">CloudFlare 盾通用版，返回 cookies 或验证码提交参数</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">消耗点数:</span>
+                            <span class="detail-value">300-1000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">代理优惠:</span>
+                            <span class="detail-value">150-1000</span>
+                        </div>
+                    </div>
+                    <a href="./pages/cloudflare.html" class="btn btn-outline btn-small" title="查看Cloudflare验证服务详情">查看Cloudflare详情</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">Akamai</h3>
+                            <div class="service-status">
+                                <span class="status-badge active">运行中</span>
+                                <span class="status-badge premium">包月可用</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="service-description">Akamai v2/v3，直接返回 _abck</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">消耗点数:</span>
+                            <span class="detail-value">1000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">代理优惠:</span>
+                            <span class="detail-value">-</span>
+                        </div>
+                    </div>
+                    <a href="./pages/akamai.html" class="btn btn-outline btn-small" title="查看Akamai验证服务详情">查看Akamai详情</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">AWS WAF</h3>
+                            <div class="service-status">
+                                <span class="status-badge active">运行中</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="service-description">Aws Waf 盾，返回 aws-waf-token</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">消耗点数:</span>
+                            <span class="detail-value">150-500</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">代理优惠:</span>
+                            <span class="detail-value">150-250</span>
+                        </div>
+                    </div>
+                    <a href="./pages/aws.html" class="btn btn-outline btn-small" title="查看AWS WAF验证服务详情">查看AWS WAF详情</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="service-info">
+                            <h3 class="service-title">Kasada</h3>
+                            <div class="service-status">
+                                <span class="status-badge active">运行中</span>
+                                <span class="status-badge premium">包月可用</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="service-description">Kasada 盾，返回 x-kpsdk-ct/cd</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">消耗点数:</span>
+                            <span class="detail-value">50-1000</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">代理优惠:</span>
+                            <span class="detail-value">-</span>
+                        </div>
+                    </div>
+                    <a href="./pages/kasada.html" class="btn btn-outline btn-small" title="查看Kasada验证服务详情">查看Kasada详情</a>
+                </div>
+            </div>
+            
+            <div class="services-more">
+                <p>还支持更多验证码类型：</p>
+                <div class="more-services">
+                    <a href="./pages/perimeterx.html" class="service-tag">PerimeterX</a>
+                    <a href="./pages/datadome.html" class="service-tag">DataDome</a>
+                    <a href="./pages/shape.html" class="service-tag">Shape</a>
+                    <a href="./pages/incapsula.html" class="service-tag">Incapsula</a>
+                    <a href="./pages/incapsula_rbzid.html" class="service-tag">Incapsula RBZID</a>
+                    <a href="./pages/incapsula_utmvc.html" class="service-tag">Incapsula UTMVC</a>
+                    <a href="./pages/vercel.html" class="service-tag">Vercel</a>
+                    <a href="./pages/tls.html" class="service-tag">TLS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="pricing-title" class="section-title">价格与等级</h2>
+                <p class="section-description">灵活的定价方案，满足不同需求</p>
+            </div>
+            
+            <div class="pricing-info">
+                <div class="price-base">
+                    <div class="price-card">
+                        <h3>基础定价</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">1</span>
+                            <span class="unit">= 66,000 点</span>
+                        </div>
+                        <p>按使用量付费，无月费</p>
+                    </div>
+                </div>
+                
+                <div class="vip-levels">
+                    <h3>VIP 等级折扣</h3>
+                    <div class="levels-grid">
+                        <div class="level-card">
+                            <div class="level-badge">VIP 1</div>
+                            <div class="level-discount">90% 折扣</div>
+                            <div class="level-requirement">消费 100,000,000 点</div>
+                            <div class="level-example">300点服务实际消费270点</div>
+                        </div>
+                        <div class="level-card">
+                            <div class="level-badge">VIP 2</div>
+                            <div class="level-discount">80% 折扣</div>
+                            <div class="level-requirement">消费 250,000,000 点</div>
+                            <div class="level-example">300点服务实际消费240点</div>
+                        </div>
+                        <div class="level-card">
+                            <div class="level-badge">VIP 3</div>
+                            <div class="level-discount">70% 折扣</div>
+                            <div class="level-requirement">消费 600,000,000 点</div>
+                            <div class="level-example">300点服务实际消费210点</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="referral-info">
+                    <h3>返利说明</h3>
+                    <div class="referral-grid">
+                        <div class="referral-card">
+                            <div class="referral-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>邀请返利</h4>
+                            <p>直接邀请的用户消费时，得消费的 20% 返利</p>
+                        </div>
+                        <div class="referral-card">
+                            <div class="referral-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>开发者返利</h4>
+                            <p>用户调用服务时传入开发者ID，开发者得消费的 20% 返利</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">准备开始使用？</h2>
+                <p class="cta-description">立即注册获取API密钥，开始使用专业的验证码破解服务</p>
+                <div class="cta-actions">
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        免费注册
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="/" class="logo">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>NoCaptcha.io</span>
+                        </a>
+                        <p>专业验证码破解服务平台</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>核心服务</h4>
+                    <ul>
+                        <li><a href="./pages/recaptcha.html" title="ReCaptcha破解API">ReCaptcha破解</a></li>
+                        <li><a href="./pages/kasada.html" title="Kasada Solver API">Kasada绕过</a></li>
+                        <li><a href="./pages/cloudflare.html" title="Cloudflare 5秒盾绕过">Cloudflare防护</a></li>
+                        <li><a href="./pages/aws.html" title="AWS WAF Captcha破解">AWS WAF绕过</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>技术文档</h4>
+                    <ul>
+                        <li><a href="./pages/tls.html" title="TLS指纹绕过">TLS指纹</a></li>
+                        <li><a href="./pages/status.html" title="服务状态监控">服务状态</a></li>
+                        <li><a href="./pages/hcaptcha.html" title="hCaptcha识别服务">hCaptcha识别</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>更多服务</h4>
+                    <ul>
+                        <li><a href="./pages/akamai.html" title="Akamai反机器人绕过">Akamai绕过</a></li>
+                        <li><a href="./pages/datadome.html" title="DataDome验证码破解">DataDome</a></li>
+                        <li><a href="./pages/perimeterx.html" title="PerimeterX人机验证">PerimeterX</a></li>
+                        <li><a href="./pages/shape.html" title="Shape Security绕过">Shape Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 NoCaptcha.io. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts with defer for better performance -->
+    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/components.js" defer></script>
+</body>
+</html> 

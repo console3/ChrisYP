@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NoCaptcha.io - Professional Captcha Solving Service Platform, supports ReCaptcha, hCaptcha, Cloudflare and all mainstream captcha types with high success rate and fast response">
+    <meta name="keywords" content="captcha solving,ReCaptcha,hCaptcha,Cloudflare,captcha solution,API">
+    <meta name="author" content="NoCaptcha.io">
+    <link rel="canonical" href="https://shrotam.com/en/">
+    <link rel="alternate" href="https://shrotam.com/" hreflang="zh-CN" />
+    <link rel="alternate" href="https://shrotam.com/en/" hreflang="en" />
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <meta http-equiv="Content-Language" content="en">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shrotam.com/en/">
+    <meta property="og:title" content="NoCaptcha.io - Professional Captcha Solving Service Platform">
+    <meta property="og:description" content="Industry-leading captcha solving service, supports all mainstream captcha types, efficient, stable and reliable">
+    <meta property="og:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shrotam.com/en/">
+    <meta property="twitter:title" content="NoCaptcha.io - Professional Captcha Solving Service Platform">
+    <meta property="twitter:description" content="Industry-leading captcha solving service, supports all mainstream captcha types, efficient, stable and reliable">
+    <meta property="twitter:image" content="https://shrotam.com/assets/images/og-image.png">
+
+    <title>NoCaptcha.io - Professional Captcha Solving Service Platform</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="/en/" class="logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>NoCaptcha.io</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#services" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="./recaptcha.html" class="dropdown-item">ReCaptcha</a>
+                                <a href="./hcaptcha.html" class="dropdown-item">hCaptcha</a>
+                                <a href="./cloudflare.html" class="dropdown-item">Cloudflare</a>
+                                <a href="./akamai.html" class="dropdown-item">Akamai</a>
+                                <a href="./aws.html" class="dropdown-item">AWS WAF</a>
+                                <a href="./kasada.html" class="dropdown-item">Kasada</a>
+                                <a href="./perimeterx.html" class="dropdown-item">PerimeterX</a>
+                                <a href="./datadome.html" class="dropdown-item">DataDome</a>
+                                <a href="./shape.html" class="dropdown-item">Shape</a>
+                                <a href="./incapsula.html" class="dropdown-item">Incapsula</a>
+                                <a href="./incapsula_rbzid.html" class="dropdown-item">Incapsula RBZID</a>
+                                <a href="./incapsula_utmvc.html" class="dropdown-item">Incapsula UTMVC</a>
+                                <a href="./vercel.html" class="dropdown-item">Vercel</a>
+                                <a href="./tls.html" class="dropdown-item">TLS</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./status.html" class="nav-link">Status</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#pricing" class="nav-link">Pricing</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="language-switcher">
+                        <button class="lang-btn" id="lang-btn">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">English</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="lang-menu" id="lang-menu">
+                            <a href="../index.html" class="lang-option" data-lang="zh">中文</a>
+                            <a href="../en/index.html" class="lang-option" data-lang="en">English</a>
+                        </div>
+                    </div>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        Free Register
+                    </a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero bg-gradient-hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Professional Captcha</span>
+                        <br>Solving Platform
+                    </h1>
+                    <p class="hero-description">
+                        Industry-leading captcha solution, supports all mainstream captcha types<br>
+                        High Success Rate • Fast Response • 24/7 Technical Support
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary btn-large" target="_blank">
+                            <i class="fas fa-rocket"></i>
+                            Get API Now
+                        </a>
+                        <a href="#services" class="btn btn-outline btn-large">
+                            <i class="fas fa-play"></i>
+                            View Services
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Service Availability</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1-10s</div>
+                            <div class="stat-label">Average Response Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Supported Captcha Types</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <div class="floating-card">
+                            <div class="card-header">
+                                <div class="card-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="card-title">API Response</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="code-line">
+                                    <span class="code-key">"status":</span>
+                                    <span class="code-value">"success"</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-key">"token":</span>
+                                    <span class="code-value">"03AGdBq26..."</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-key">"time":</span>
+                                    <span class="code-value">"2.3s"</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Advantages</h2>
+                <p class="section-description">Why choose NoCaptcha.io?</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">Universal Compatibility</h3>
+                    <p class="feature-description">Supports all mainstream captcha types including ReCaptcha, hCaptcha, Cloudflare, and more</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">Average response time 1-10 seconds, industry-leading processing speed</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">High Success Rate</h3>
+                    <p class="feature-description">99%+ success rate, continuously optimized algorithms ensure stable performance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="feature-title">Easy Integration</h3>
+                    <p class="feature-description">Simple RESTful API, supports multiple programming languages, quick integration</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">24/7 Support</h3>
+                    <p class="feature-description">Professional technical team provides round-the-clock support and service</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">Cost Effective</h3>
+                    <p class="feature-description">Competitive pricing, flexible billing options, pay only for what you use</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Supported Services</h2>
+                <p class="section-description">Comprehensive captcha and anti-bot solution coverage</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="service-title">ReCaptcha</h3>
+                    <p class="service-description">Google ReCaptcha v2, v3, Enterprise</p>
+                    <a href="./recaptcha.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">hCaptcha</h3>
+                    <p class="service-description">Privacy-focused captcha solution</p>
+                    <a href="./hcaptcha.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloudflare</h3>
+                    <p class="service-description">Cloudflare Turnstile and Challenge</p>
+                    <a href="./cloudflare.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="service-title">Akamai</h3>
+                    <p class="service-description">Akamai Bot Manager protection</p>
+                    <a href="./akamai.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="service-title">AWS WAF</h3>
+                    <p class="service-description">Amazon Web Application Firewall</p>
+                    <a href="./aws.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="service-title">Kasada</h3>
+                    <p class="service-description">Advanced bot detection and mitigation</p>
+                    <a href="./kasada.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="service-title">PerimeterX</h3>
+                    <p class="service-description">Behavioral-based bot protection</p>
+                    <a href="./perimeterx.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="service-title">DataDome</h3>
+                    <p class="service-description">Real-time bot detection platform</p>
+                    <a href="./datadome.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shapes"></i>
+                    </div>
+                    <h3 class="service-title">Shape</h3>
+                    <p class="service-description">Enterprise bot management solution</p>
+                    <a href="./shape.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield"></i>
+                    </div>
+                    <h3 class="service-title">Incapsula</h3>
+                    <p class="service-description">Cloud-based application security</p>
+                    <a href="./pages/incapsula.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-triangle"></i>
+                    </div>
+                    <h3 class="service-title">Vercel</h3>
+                    <p class="service-description">Edge protection and bot detection</p>
+                    <a href="./pages/vercel.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="service-title">TLS</h3>
+                    <p class="service-description">TLS fingerprinting bypass</p>
+                    <a href="./tls.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">Simple 3-step process to solve any captcha</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Submit Captcha</h3>
+                        <p class="step-description">Send captcha data to our API endpoint with required parameters</p>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">AI Processing</h3>
+                        <p class="step-description">Our advanced AI algorithms process and solve the captcha</p>
+                    </div>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Get Solution</h3>
+                        <p class="step-description">Receive the solved captcha token ready for use</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pricing Plans</h2>
+                <p class="section-description">Choose the plan that fits your needs</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">0.001</span>
+                            <span class="price-unit">per solve</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> ReCaptcha v2/v3</li>
+                            <li><i class="fas fa-check"></i> hCaptcha</li>
+                            <li><i class="fas fa-check"></i> Basic support</li>
+                            <li><i class="fas fa-check"></i> 99% uptime</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-outline" target="_blank">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Professional</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">0.0008</span>
+                            <span class="price-unit">per solve</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> All captcha types</li>
+                            <li><i class="fas fa-check"></i> Priority processing</li>
+                            <li><i class="fas fa-check"></i> 24/7 support</li>
+                            <li><i class="fas fa-check"></i> 99.9% uptime</li>
+                            <li><i class="fas fa-check"></i> Volume discounts</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-cta" target="_blank">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="price-amount">Custom</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Custom solutions</li>
+                            <li><i class="fas fa-check"></i> Dedicated support</li>
+                            <li><i class="fas fa-check"></i> SLA guarantee</li>
+                            <li><i class="fas fa-check"></i> On-premise options</li>
+                            <li><i class="fas fa-check"></i> Custom integrations</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:support@nocaptcha.io" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="documentation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Start</h2>
+                <p class="section-description">Get started with our API in minutes</p>
+            </div>
+            <div class="docs-content">
+                <div class="docs-tabs">
+                    <button class="docs-tab active" data-tab="curl">cURL</button>
+                    <button class="docs-tab" data-tab="python">Python</button>
+                    <button class="docs-tab" data-tab="javascript">JavaScript</button>
+                    <button class="docs-tab" data-tab="php">PHP</button>
+                </div>
+                <div class="docs-code">
+                    <div class="code-block active" id="curl">
+                        <pre><code># Submit captcha
+curl -X POST https://api.nocaptcha.io/solve \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "recaptcha_v2",
+    "site_key": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
+    "page_url": "https://example.com"
+  }'
+
+# Get result
+curl https://api.nocaptcha.io/result/TASK_ID</code></pre>
+                    </div>
+                    <div class="code-block" id="python">
+                        <pre><code>import requests
+
+# Submit captcha
+response = requests.post('https://api.nocaptcha.io/solve', json={
+    'type': 'recaptcha_v2',
+    'site_key': '6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-',
+    'page_url': 'https://example.com'
+})
+
+task_id = response.json()['task_id']
+
+# Get result
+result = requests.get(f'https://api.nocaptcha.io/result/{task_id}')
+print(result.json())</code></pre>
+                    </div>
+                    <div class="code-block" id="javascript">
+                        <pre><code>// Submit captcha
+const response = await fetch('https://api.nocaptcha.io/solve', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    type: 'recaptcha_v2',
+    site_key: '6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-',
+    page_url: 'https://example.com'
+  })
+});
+
+const { task_id } = await response.json();
+
+// Get result
+const result = await fetch(`https://api.nocaptcha.io/result/${task_id}`);
+console.log(await result.json());</code></pre>
+                    </div>
+                    <div class="code-block" id="php">
+                        <pre><code><?php
+// Submit captcha
+$data = [
+    'type' => 'recaptcha_v2',
+    'site_key' => '6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-',
+    'page_url' => 'https://example.com'
+];
+
+$response = file_get_contents('https://api.nocaptcha.io/solve', false, 
+    stream_context_create([
+        'http' => [
+            'method' => 'POST',
+            'header' => 'Content-Type: application/json',
+            'content' => json_encode($data)
+        ]
+    ])
+);
+
+$task_id = json_decode($response)->task_id;
+
+// Get result
+$result = file_get_contents("https://api.nocaptcha.io/result/$task_id");
+echo $result;
+?></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-description">Join thousands of developers who trust NoCaptcha.io for their captcha solving needs</p>
+                <div class="cta-actions">
+                    <a href="https://www.nocaptcha.io/register?c=hqLmMS" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fas fa-rocket"></i>
+                        Start Free Trial
+                    </a>
+                    <a href="./recaptcha.html" class="btn btn-outline btn-large">
+                        <i class="fas fa-book"></i>
+                        View Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <a href="/en/" class="logo">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>NoCaptcha.io</span>
+                        </a>
+                        <p class="footer-description">
+                            Professional captcha solving service platform, providing efficient and reliable solutions for all your captcha needs.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="./recaptcha.html">ReCaptcha</a></li>
+                        <li><a href="./hcaptcha.html">hCaptcha</a></li>
+                        <li><a href="./cloudflare.html">Cloudflare</a></li>
+                        <li><a href="./akamai.html">Akamai</a></li>
+                        <li><a href="./aws.html">AWS WAF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="https://www.nocaptcha.io/register?c=hqLmMS" target="_blank">API Access</a></li>
+                        <li><a href="mailto:support@nocaptcha.io">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 NoCaptcha.io. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/components.js"></script>
+    
+    <!-- Initialize docs tabs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.docs-tab');
+            const codeBlocks = document.querySelectorAll('.code-block');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetTab = this.dataset.tab;
+                    
+                    // Remove active class from all tabs and code blocks
+                    tabs.forEach(t => t.classList.remove('active'));
+                    codeBlocks.forEach(block => block.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding code block
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
